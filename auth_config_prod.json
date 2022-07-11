@@ -1,0 +1,9 @@
+{
+  "domain": "zacsandbox.us.auth0.com",
+  "apiClientId": "NVy2lZGmGBYjKpGTVCiRamVTuMaHX8pB",
+  "clientId": "SRxPnDsqhkiccvGny0rzX3RECajkDK6F",
+  "audience": "https://sec-api",
+  "apiUri": "https://zac0.herokuapp.com",
+  "appUri": "https://zac0.herokuapp.com",
+  "errorPath": "/error"
+}

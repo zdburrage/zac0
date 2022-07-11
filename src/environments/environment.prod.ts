@@ -9,15 +9,15 @@ const { domain, clientId, audience, apiUri, errorPath } = config as {
 };
 
 export const environment = {
-  production: true,
+  production: false,
   auth: {
     domain,
     clientId,
-    ...(audience && audience !== "YOUR_API_IDENTIFIER" ? { audience } : null),
+    ...(audience && audience !== 'YOUR_API_IDENTIFIER' ? { audience } : null),
     redirectUri: window.location.origin,
     errorPath,
   },
   httpInterceptor: {
-    allowedList: [`${apiUri}/*`],
+    allowedList: [`${apiUri}/api/organization/*`, `${apiUri}/api/external`],
   },
 };
