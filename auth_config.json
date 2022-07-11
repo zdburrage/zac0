@@ -1,0 +1,9 @@
+{
+  "domain": "zacsandbox.us.auth0.com",
+  "apiClientId": "NVy2lZGmGBYjKpGTVCiRamVTuMaHX8pB",
+  "clientId": "SRxPnDsqhkiccvGny0rzX3RECajkDK6F",
+  "audience": "https://sec-api",
+  "apiUri": "http://localhost:3001",
+  "appUri": "http://localhost:4200",
+  "errorPath": "/error"
+}
