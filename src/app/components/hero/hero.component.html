@@ -1,0 +1,17 @@
+
+  <div class="text-center hero">
+    <div *ngIf="org">
+      <img img class="app-logos" src="{{org?.branding.logo_url}}" alt="SEC logo" />
+      <h1 class="mb-4">{{org?.display_name}}</h1>
+    </div>
+    <div *ngIf="!org">
+      <img img class="app-logos" src="../../assets/logo.png" alt="SEC logo" />
+      <h1 class="mb-4">The Southeastern Conference</h1>
+    </div>
+      <p class="lead">
+        {{org?.metadata?.slogan || 'It Just Means More'}}
+      </p>
+  </div>
+
+
+

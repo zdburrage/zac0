@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5%;
+}
+
+.title img {
+    width: 20%;
+    height: auto;
+}
+
+.expand-button {
+    margin: 5%;
+}
+
+.result-block-container {
+    min-height: unset !important;
+}

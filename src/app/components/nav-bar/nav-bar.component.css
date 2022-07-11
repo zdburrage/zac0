@@ -1,0 +1,14 @@
+.org-list div img {
+    width: auto;
+    height: 40px;
+    margin: auto;
+}
+
+.org-list div {
+    width: 25%;
+    margin: auto;
+}
+
+.org-list {
+    display: -webkit-inline-box;
+}

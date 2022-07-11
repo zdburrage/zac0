@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <!-- <div class="title">
+    <h1 *ngIf="org">2022 Schedule - {{org?.display_name}}</h1>
+  
+    <div *ngIf="hasApiError" class="alert alert-danger" role="alert">
+      An error occured when trying to call the local API on port 3001. Ensure the local API is started using either `npm run dev` or `npm run
+      server:api`.
+    </div>
+  
+    <img src={{org?.branding?.logo_url}}>
+  </div> -->
+
+
+  <div class="result-block-container" *ngFor="let schedule of schedules">
+
+    <div class="title">
+      <h1>2022 Schedule - {{schedule?.team | titlecase}}</h1>
+    
+      <div *ngIf="hasApiError" class="alert alert-danger" role="alert">
+        An error occured when trying to call the local API on port 3001. Ensure the local API is started using either `npm run dev` or `npm run
+        server:api`.
+      </div>
+    
+      <img src={{org?.branding?.logo_url}}>
+    </div>
+
+    <div *ngIf="schedules.length > 1" class="expand-button">
+      <button mat-raised-button  (click)="schedule.show = !schedule.show" aria-label="Example icon button with a home icon">
+        <label>{{ schedule.show ? 'Hide Schedule' : 'Show Schedule'}}</label>
+      </button>
+    </div>
+    <table *ngIf="schedule.show" mat-table [dataSource]="schedule.games" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="team">
+        <th mat-header-cell *matHeaderCellDef> Team </th>
+        <td mat-cell *matCellDef="let element"> {{getTeam(element, schedule.team)}}
+        </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="opponent">
+        <th mat-header-cell *matHeaderCellDef> Opponent </th>
+        <td mat-cell *matCellDef="let element"> {{getOpponent(element, schedule.team)}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef> Location </th>
+        <td mat-cell *matCellDef="let element"> {{element.venue}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date | date: 'short'}} </td>
+      </ng-container>
+    
+    
+      <tr mat-header-row *matHeaderRowDef="['team', 'opponent', 'location', 'date']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['team', 'opponent', 'location', 'date'];"></tr>
+    </table>
+  </div>
+</div>
