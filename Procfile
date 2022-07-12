@@ -1,1 +1,1 @@
-web: npm run start 
+web: npm-run-all --parallel server:app
