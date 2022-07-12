@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run prod",
     "build": "ng build",
     "test": "ng test",
     "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
@@ -11,8 +11,8 @@
     "e2e": "ng e2e",
     "server:app": "node server.js",
     "server:api": "node api-server.js",
-    "dev": "npm-run-all --parallel start server:api",
-    "prod": "npm-run-all --parallel server:app server:api",
+    "dev": "npm-run-all --parallel start",
+    "prod": "npm-run-all --parallel server:app",
     "postbuild": "npm run copy:server",
     "copy:server": "copyfiles server.js auth_config.json dist/login-demo"
   },
