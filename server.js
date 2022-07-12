@@ -12,6 +12,7 @@ app.use(morgan('dev'));
 
 app.use(
   helmet({
+    crossOriginEmbedderPolicy: false,
     contentSecurityPolicy: {
       // reportOnly: true,
       directives: {
@@ -23,8 +24,7 @@ app.use(
         'font-src': ["'self'", 'https:', 'data:'],
         'frame-ancestors': ["'self'"],
         'img-src': ["'self'", 'data:', '*.gravatar.com', '*'],
-        'style-src': ["'self'", 'https:', "'unsafe-inline'", '*'],
-        'script-src-attr': ['*']
+        'style-src': ["'self'", 'https:', '*']
       },
     },
   })
