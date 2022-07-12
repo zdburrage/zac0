@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import config from '../../auth_config.json';
+import config from '../../auth_config_prod.json';
 import { Game, IGame } from './models/schedule';
 import { Response } from 'express';
 
