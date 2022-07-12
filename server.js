@@ -22,8 +22,9 @@ app.use(
         'block-all-mixed-content': [],
         'font-src': ["'self'", 'https:', 'data:'],
         'frame-ancestors': ["'self'"],
-        'img-src': ["'self'", 'data:', '*.gravatar.com'],
-        'style-src': ["'self'", 'https:', "'unsafe-inline'"],
+        'img-src': ["'self'", 'data:', '*.gravatar.com', '*'],
+        'style-src': ["'self'", 'https:', "'unsafe-inline'", '*'],
+        'script-src-attr': ['*']
       },
     },
   })
