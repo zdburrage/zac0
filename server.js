@@ -24,7 +24,7 @@ app.use(
         'font-src': ["'self'", 'https:', 'data:'],
         'frame-ancestors': ["'self'"],
         'img-src': ["'self'", 'data:', '*.gravatar.com', '*'],
-        'style-src': ["'self'", 'https:', '*', 'unsafe-inline']
+        'style-src': ["'self'", 'https:', '*', "'unsafe-inline'"]
       },
     },
   })
