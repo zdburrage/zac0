@@ -1,7 +1,7 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-import config from '../../auth_config_prod.json';
+import config from '../../auth_config.json';
 
 const { domain, clientId, audience, apiUri, errorPath } = config as {
   domain: string;
@@ -21,7 +21,7 @@ export const environment = {
     errorPath,
   },
   httpInterceptor: {
-    allowedList: [`${apiUri}/api/organization/*`, `${apiUri}/api/external`],
+    allowedList: [`${apiUri}/api/organization/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`],
   },
 };
 

@@ -1,6 +1,6 @@
 .org-list div img {
-    width: auto;
-    height: 40px;
+    width: 75%;
+    height: 75%;
     margin: auto;
 }
 
@@ -11,4 +11,11 @@
 
 .org-list {
     display: -webkit-inline-box;
+}
+
+.dropdown-menu {
+    width: 30rem;
+    height: 50rem;
+    overflow-y: scroll;
+    overflow-x: clip;
 }

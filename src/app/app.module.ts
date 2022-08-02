@@ -22,6 +22,8 @@ import { environment as env } from '../environments/environment';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { ProfileFormComponent } from './pages/profile-form/profile-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import {MatIconModule} from '@angular/material/icon';
     HomeContentComponent,
     LoadingComponent,
     ScheduleComponent,
+    ProfileFormComponent,
     ErrorComponent
   ],
   imports: [
@@ -51,7 +54,9 @@ import {MatIconModule} from '@angular/material/icon';
     }),
     MatTableModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

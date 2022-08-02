@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import config from '../../auth_config_prod.json';
+import config from '../../auth_config.json';
 import { Game, IGame } from './models/schedule';
 import { Response } from 'express';
 
@@ -26,5 +26,16 @@ export class ApiService {
 
   getTeamSchedule(year: number): Observable<IGame[]> {
     return this.http.get<IGame[]>(`${config.apiUri}/api/games/${year}`);
+  }
+
+  getROPG() {
+    return this.http.get(`${config.apiUri}/api/external`);
+  }
+
+  postSecInfo(sub: string, form: any): Observable<any> {
+    var obj = {
+      sec_credentials : form
+    }
+    return this.http.post(`${config.apiUri}/api/users/${sub}/sec-profile`, obj);
   }
 }

@@ -1,0 +1,24 @@
+<div class="container mt-5">
+ <form [formGroup]="secForm" (submit)="submitForm()" class="form">
+   <div class="input">
+    <legend>Enter Your SEC Admin ID</legend>
+    <input type="text" formControlName="id">
+   </div>
+   <div class="input">
+    <legend>What Division do you Manage?</legend>
+    <div>
+      <input type="radio" id="east" value="east"
+             formControlName="division">
+      <label for="east">East</label>
+    </div>
+
+    <div>
+      <input type="radio" id="west"  value="west" formControlName="division">
+      <label for="west">West</label>
+    </div>
+   </div>
+   <div class="input">
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+   </div>
+ </form>
+</div>

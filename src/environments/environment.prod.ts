@@ -1,4 +1,4 @@
-import config from '../../auth_config_prod.json';
+import config from '../../auth_config.json';
 
 const { domain, clientId, audience, apiUri, errorPath } = config as {
   domain: string;
@@ -18,6 +18,6 @@ export const environment = {
     errorPath,
   },
   httpInterceptor: {
-    allowedList: [`${apiUri}/api/organization/*`, `${apiUri}/api/external`],
+    allowedList: [`${apiUri}/api/organization/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`],
   },
 };

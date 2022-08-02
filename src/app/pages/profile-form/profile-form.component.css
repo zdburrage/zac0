@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.input {
+    margin: auto;
+    width: 40%;
+    display: grid;
+    margin-bottom: 5%;
+}
+
+.input div input[type="radio"] {
+    margin-right: 5px;
+}
+
