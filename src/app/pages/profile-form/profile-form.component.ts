@@ -52,7 +52,7 @@ export class ProfileFormComponent {
     if (this.secForm.valid) {
       this.api.postSecInfo(this.session_token?.user_id, this.secForm.value).subscribe(res => {
         if (res) {
-          window.location.href = `https://zacsandbox.us.auth0.com/continue?state=${this.state}`;
+          window.location.href = `https://auth.zacsandbox.com.com/continue?state=${this.state}`;
         }
       });
     }
