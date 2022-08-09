@@ -24,6 +24,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { ProfileFormComponent } from './pages/profile-form/profile-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {LoginComponent} from './pages/login/login.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoadingComponent,
     ScheduleComponent,
     ProfileFormComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

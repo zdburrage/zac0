@@ -6,6 +6,7 @@ import { ProfileFormComponent } from './pages/profile-form/profile-form.componen
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { AuthGuard } from '@auth0/auth0-angular';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'error',
     component: ErrorComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '',

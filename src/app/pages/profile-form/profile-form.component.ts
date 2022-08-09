@@ -45,6 +45,8 @@ export class ProfileFormComponent {
     })
 
     var secret = 'FC9FIgLorMEim0RnlID8yrYlwb5YR8Hp';
+
+    this.authService.loginWithRedirect()
     
   }
 
