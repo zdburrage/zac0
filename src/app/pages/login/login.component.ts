@@ -11,10 +11,13 @@ export class LoginComponent {
 
   constructor(public auth: AuthService, public route: ActivatedRoute) {
     this.route.queryParams.subscribe(res => {
-      this.auth.loginWithRedirect({
-        invitation: res.invitation,
-        organization: res.organization
-      })
+      if (res.invitation) {
+        this.auth.loginWithRedirect({
+          invitation: res.invitation,
+          organization: res.organization
+        })
+      }
+
     })
 
   }

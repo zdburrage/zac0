@@ -35,6 +35,12 @@ export class NavBarComponent implements OnInit {
     this.auth.loginWithRedirect({organization: orgId});
   }
 
+  loginWithBigCommerce() {
+    this.auth.loginWithRedirect({
+      connection: 'BigCommerce'
+    });
+  }
+
   logout() {
     this.auth.logout({ returnTo: this.doc.location.origin });
   }

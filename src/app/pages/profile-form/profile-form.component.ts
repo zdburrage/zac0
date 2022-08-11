@@ -44,10 +44,7 @@ export class ProfileFormComponent {
       console.log(this.session_token);
     })
 
-    var secret = 'FC9FIgLorMEim0RnlID8yrYlwb5YR8Hp';
-
-    this.authService.loginWithRedirect()
-    
+    var secret = 'FC9FIgLorMEim0RnlID8yrYlwb5YR8Hp';    
   }
 
   public submitForm(): void {
