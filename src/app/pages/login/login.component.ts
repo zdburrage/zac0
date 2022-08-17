@@ -14,7 +14,8 @@ export class LoginComponent {
       if (res.invitation) {
         this.auth.loginWithRedirect({
           invitation: res.invitation,
-          organization: res.organization
+          organization: res.organization,
+          redirect_uri: 'http://localhost:3000'
         })
       }
 
