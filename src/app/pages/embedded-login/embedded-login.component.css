@@ -1,0 +1,33 @@
+.bg {
+    height: 100%;
+    width: 100%;
+    background-image: url(https://www.thesportsgeek.com/app/uploads/2019/11/College-Football-Teams-Playing-Background-SEC-Logo-825x400.jpg);
+    background-size: 50%;
+    position: relative;
+}
+
+mat-card {
+    margin: auto;
+    width: 50%;
+    margin-top: 30%;
+}
+
+mat-card-title {
+    text-align: center;
+}
+
+.mat-form-field {
+    display: block !important;
+}
+
+button {
+    width: 100%;
+}
+
+.login-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

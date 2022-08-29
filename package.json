@@ -14,7 +14,7 @@
     "dev": "npm-run-all --parallel start",
     "prod": "npm-run-all --parallel server:app",
     "postbuild": "npm run copy:server",
-    "copy:server": "copyfiles server.js auth_config.json dist/login-demo"
+    "copy:server": "copyfiles server.js auth_config.json dist/zac0"
   },
   "private": true,
   "dependencies": {
@@ -33,7 +33,9 @@
     "@fortawesome/angular-fontawesome": "~0.10.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@popperjs/core": "^2.11.6",
     "auth0": "^2.42.0",
+    "auth0-js": "^9.19.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "express-jwt": "^7.7.5",

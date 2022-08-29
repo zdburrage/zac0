@@ -25,6 +25,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { ProfileFormComponent } from './pages/profile-form/profile-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {LoginComponent} from './pages/login/login.component'
+import { EmbeddedLoginComponent } from './pages/embedded-login/embedded-login.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import {LoginComponent} from './pages/login/login.component'
     ScheduleComponent,
     ProfileFormComponent,
     ErrorComponent,
-    LoginComponent
+    LoginComponent,
+    EmbeddedLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,9 @@ import {LoginComponent} from './pages/login/login.component'
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [
     {

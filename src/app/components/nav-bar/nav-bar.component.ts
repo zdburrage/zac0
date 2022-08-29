@@ -3,6 +3,7 @@ import { faUser, faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
 import { ApiService } from 'src/app/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -18,6 +19,7 @@ export class NavBarComponent implements OnInit {
   constructor(
     public auth: AuthService,
     private apiService: ApiService,
+    public router: Router,
     @Inject(DOCUMENT) private doc: Document
   ) {}
 
@@ -39,6 +41,16 @@ export class NavBarComponent implements OnInit {
     this.auth.loginWithRedirect({
       connection: 'BigCommerce'
     });
+  }
+
+  loginWithAD() {
+    this.auth.loginWithRedirect({
+      connection: 'auth0-test-ad'
+    });
+  }
+
+  goToEmbeddedLogin() {
+    this.router.navigate(['/embedded-login']);
   }
 
   logout() {

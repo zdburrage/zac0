@@ -19,3 +19,7 @@
     overflow-y: scroll;
     overflow-x: clip;
 }
+
+#dropdownBasic2::after {
+    display: none;
+}

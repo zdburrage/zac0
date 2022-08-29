@@ -7,6 +7,7 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { AuthGuard } from '@auth0/auth0-angular';
 import { LoginComponent } from './pages/login/login.component';
+import { EmbeddedLoginComponent } from './pages/embedded-login/embedded-login.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'embedded-login',
+    component: EmbeddedLoginComponent,
   },
   {
     path: '',
