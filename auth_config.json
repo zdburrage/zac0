@@ -1,6 +1,6 @@
 {
-  "domain": "auth.zacsandbox.com",
-  "apiClientId": "NVy2lZGmGBYjKpGTVCiRamVTuMaHX8pB",
+  "domain": "login.zacsandbox.com",
+  "apiClientId": "NVy2lZGmGBYjKpGTVCiRamVTuMaHX8pB", 
   "clientId": "SRxPnDsqhkiccvGny0rzX3RECajkDK6F",
   "audience": "https://sec-api",
   "apiUri": "https://zac0-api.vercel.app",
