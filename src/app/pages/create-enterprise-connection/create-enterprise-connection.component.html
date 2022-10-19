@@ -1,0 +1,91 @@
+<h1>Create Enterprise Connection</h1>
+
+<div class="container mt-5">
+    <form [formGroup]="connectionForm" (submit)="submitForm()" class="form">
+      <div class="input">
+       <legend>Connection Strategy</legend>
+       <select formControlName="strategy">
+        <option value="waad">Azure AD</option>
+      </select>
+      </div>
+      <div class="input">
+        <legend>Connection Name</legend>
+        <input type="text" formControlName="name">
+      </div>
+      <div class="input">
+        <legend>Display Name</legend>
+        <input type="text" formControlName="display_name">
+      </div>
+      <div class="input">
+        <legend>Domain Connection?</legend>
+        <input type="checkbox" formControlName="is_domain_connection">
+      </div>
+      <div class="input">
+        <legend>Show as Button?</legend>
+        <input type="checkbox" formControlName="show_as_button" />
+      </div>
+      <div class="nest" formGroupName="options">
+        <div class="input">
+            <legend>Domain</legend>
+            <input type="text" formControlName="domain">
+          </div>
+          <div class="input">
+            <legend>Client ID</legend>
+            <input type="text" formControlName="client_id">
+          </div>
+          <div class="input">
+            <legend>Client Secret</legend>
+            <input type="text" formControlName="client_secret">
+          </div>
+          <div class="input">
+            <legend>Use WS Fed?</legend>
+            <input type="checkbox" formControlName="use_wsfed">
+          </div>
+          <div class="input">
+            <legend>Extend Groups?</legend>
+            <input type="checkbox" formControlName="ext_groups">
+          </div>
+          <div class="input">
+            <legend>Extend Profile?</legend>
+            <input type="checkbox" formControlName="ext_profile">
+          </div>
+          <div class="input">
+            <legend>Identity API</legend>
+            <select  formControlName="identity_api">
+                <option value="microsoft-identity-platform-v2.0">
+                    Microsoft Identity v2
+                </option>
+            </select>
+          </div>
+          <div class="input">
+            <legend>Basic Profile</legend>
+            <input type="checkbox" formControlName="basic_profile">
+          </div>
+          <div class="input">
+            <legend>Tenant Domain</legend>
+            <input type="text" formControlName="tenant_domain">
+          </div>
+          <div class="input">
+            <legend>WAAD Protocol</legend>
+            <input type="text" formControlName="waad_protocol">
+          </div>
+          <div class="input">
+            <legend>Domain Aliases</legend>
+            <input type="text" formControlName="domain_aliases">
+          </div>
+      </div>
+      <div class="input">
+        <legend>Enable Users API?</legend>
+        <input type="checkbox" formControlName="api_enable_users">
+      </div>
+      <div class="input">
+        <legend>Extend Nested Groups?</legend>
+        <input type="checkbox" formControlName="ext_nested_groups">
+      </div>
+
+      <div class="input">
+       <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+   </div>
+   

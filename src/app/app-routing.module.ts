@@ -8,6 +8,7 @@ import { ErrorComponent } from './pages/error/error.component';
 import { AuthGuard } from '@auth0/auth0-angular';
 import { LoginComponent } from './pages/login/login.component';
 import { EmbeddedLoginComponent } from './pages/embedded-login/embedded-login.component';
+import { CreateEnterpriseConnectionComponent } from './pages/create-enterprise-connection/create-enterprise-connection.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'embedded-login',
     component: EmbeddedLoginComponent,
+  },
+  {
+    path: 'create-connection',
+    component: CreateEnterpriseConnectionComponent
   },
   {
     path: '',

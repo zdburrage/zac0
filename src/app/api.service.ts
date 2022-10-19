@@ -38,4 +38,8 @@ export class ApiService {
     }
     return this.http.post(`${config.apiUri}/api/users/${sub}/sec-profile`, obj);
   }
+
+  postCreateConnection(data: any): Observable<any>{
+    return this.http.post(`${config.apiUri}/api/connections/create`, data);
+  }
 }

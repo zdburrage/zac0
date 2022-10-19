@@ -22,7 +22,7 @@ export class EmbeddedLoginComponent {
   webAuth = new WebAuth({
     domain:       'zacsandbox.us.auth0.com',
     clientID:     'SRxPnDsqhkiccvGny0rzX3RECajkDK6F',
-    redirectUri: 'http://localhost:4200/login'
+    redirectUri: 'http://localhost:4200'
   });
 
   constructor(public auth: AuthService, public route: ActivatedRoute) {
@@ -32,7 +32,7 @@ export class EmbeddedLoginComponent {
   submit() {
     if (this.form.valid) {
       this.webAuth.login({
-        realm: 'auth0-test-ad',
+        realm: 'Username-Password-Authentication',
         email: this.form.controls['email'].value,
         password: this.form.controls['password'].value,
         responseType: 'token',

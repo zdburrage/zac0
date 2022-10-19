@@ -28,6 +28,7 @@ import {LoginComponent} from './pages/login/login.component'
 import { EmbeddedLoginComponent } from './pages/embedded-login/embedded-login.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { CreateEnterpriseConnectionComponent } from './pages/create-enterprise-connection/create-enterprise-connection.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { MatInputModule } from '@angular/material/input';
     ProfileFormComponent,
     ErrorComponent,
     LoginComponent,
-    EmbeddedLoginComponent
+    EmbeddedLoginComponent,
+    CreateEnterpriseConnectionComponent
   ],
   imports: [
     BrowserModule,
