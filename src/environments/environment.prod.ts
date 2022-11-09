@@ -18,6 +18,8 @@ export const environment = {
     errorPath,
   },
   httpInterceptor: {
-    allowedList: [`${apiUri}/api/organization/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`],
+    allowedList: [
+      `${apiUri}/api/organization/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`, `${apiUri}/api/connections/*`, `${apiUri}/api/clients`
+    ],
   },
 };
