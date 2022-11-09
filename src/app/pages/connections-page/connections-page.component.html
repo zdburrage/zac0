@@ -1,0 +1,35 @@
+<div class="container mt-5">
+
+    <h1>Tenant Connections</h1>
+
+    <table  mat-table [dataSource]="connections" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}}
+          </td>
+        </ng-container>
+      
+        <!-- Strategy Column -->
+        <ng-container matColumnDef="strategy">
+          <th mat-header-cell *matHeaderCellDef> Strategy </th>
+          <td mat-cell *matCellDef="let element"> {{element.strategy}} </td>
+        </ng-container>
+
+        <!-- Delete Column -->
+        <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"> <a (click)="deleteConnection(element.id)">Delete</a></td>
+        </ng-container>
+  
+      
+        <tr mat-header-row *matHeaderRowDef="['name', 'strategy' , 'delete']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['name', 'strategy', 'delete'];"></tr>
+      </table>
+
+      <a href="/create-connection">Create New Connection</a>
+</div>

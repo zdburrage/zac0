@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
-import { WebAuth } from 'auth0-js'
 import { ApiService } from 'src/app/api.service';
 import { EnterpriseConnection } from 'src/app/models/ent-connection';
 
@@ -52,7 +51,8 @@ export class CreateEnterpriseConnectionComponent implements OnInit {
   constructor(public auth: AuthService,
               public route: ActivatedRoute,
               private formBuilder: FormBuilder,
-               private apiService: ApiService) {
+               private apiService: ApiService,
+              private nav : Router) {
     
   }
 
@@ -66,7 +66,12 @@ export class CreateEnterpriseConnectionComponent implements OnInit {
   submitForm() {
     var data = new EnterpriseConnection(this.connectionForm.value);
     this.apiService.postCreateConnection(data).subscribe(res => {
-
+      alert("Success! Connection Created.");
+      this.nav.navigate(['/connections']);
+    }, error => {
+      if (error.status === 403) {
+        alert("Insufficient access: You are not allowed to create enterprise connections.")
+      }
     });
   }
 }

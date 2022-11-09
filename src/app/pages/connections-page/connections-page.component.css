@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+    margin-bottom: 5%;
+}
+a {
+    float: right;
+    margin-bottom: 5%;
+    color: blue !important;
+    text-decoration: underline;
+    cursor: pointer;
+}

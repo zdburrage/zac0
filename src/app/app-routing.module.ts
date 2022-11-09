@@ -9,6 +9,7 @@ import { AuthGuard } from '@auth0/auth0-angular';
 import { LoginComponent } from './pages/login/login.component';
 import { EmbeddedLoginComponent } from './pages/embedded-login/embedded-login.component';
 import { CreateEnterpriseConnectionComponent } from './pages/create-enterprise-connection/create-enterprise-connection.component';
+import { ConnectionsPageComponent } from './pages/connections-page/connections-page.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,11 @@ const routes: Routes = [
   {
     path: 'create-connection',
     component: CreateEnterpriseConnectionComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'connections',
+    component: ConnectionsPageComponent,
     canActivate: [AuthGuard],
   },
   {

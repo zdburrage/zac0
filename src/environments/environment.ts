@@ -24,7 +24,7 @@ export const environment = {
   httpInterceptor: {
     
       allowedList: [
-        `${apiUri}/api/organization/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`, `${apiUri}/api/connections/*`, `${apiUri}/api/clients`
+        `${apiUri}/api/organization/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`, `${apiUri}/api/connections*`, `${apiUri}/api/clients`
       ],
       
     
