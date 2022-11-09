@@ -53,14 +53,14 @@ export class CreateEnterpriseConnectionComponent implements OnInit {
               public route: ActivatedRoute,
               private formBuilder: FormBuilder,
                private apiService: ApiService) {
-
-                this.apiService.getClients().subscribe(res => {
-                  this.clients = res;
-                })
     
   }
 
   ngOnInit() {
+
+    this.apiService.getClients().subscribe(res => {
+      this.clients = res;
+    })
   }
 
   submitForm() {
