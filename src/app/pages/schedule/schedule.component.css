@@ -21,3 +21,11 @@ table {
 .result-block-container {
     min-height: unset !important;
 }
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}

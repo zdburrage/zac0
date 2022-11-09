@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
@@ -11,10 +11,11 @@ import { EnterpriseConnection } from 'src/app/models/ent-connection';
   templateUrl: './create-enterprise-connection.component.html',
   styleUrls: ['./create-enterprise-connection.component.css'],
 })
-export class CreateEnterpriseConnectionComponent {
+export class CreateEnterpriseConnectionComponent implements OnInit {
 
   @Input() error: string | null;
   @Output() submitEM = new EventEmitter();
+  clients: [];
 
   public connectionForm = this.formBuilder.group({
 
@@ -37,8 +38,9 @@ export class CreateEnterpriseConnectionComponent {
     is_domain_connection: [false, Validators.required],
     show_as_button: [false, Validators.required],
     display_name: ['', Validators.required],
-    api_enable_users: ['', Validators.required],
-    ext_nested_groups: ['', Validators.required],
+    enabled_clients: ['', Validators.required]
+    //api_enable_users: ['', Validators.required],
+    //ext_nested_groups: ['', Validators.required],
   });
 
   form: FormGroup = new FormGroup({
@@ -51,7 +53,14 @@ export class CreateEnterpriseConnectionComponent {
               public route: ActivatedRoute,
               private formBuilder: FormBuilder,
                private apiService: ApiService) {
+
+                this.apiService.getClients().subscribe(res => {
+                  this.clients = res;
+                })
     
+  }
+
+  ngOnInit() {
   }
 
   submitForm() {

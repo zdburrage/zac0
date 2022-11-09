@@ -81,4 +81,22 @@ export class ScheduleComponent implements OnInit {
   public getOpponent(game: Game, team: string) {
     return game.away_team.toLowerCase() !== team.toLowerCase() ? game.away_team : game.home_team;
   }
+
+  public getFinalScore(game: Game, team: string) {
+    var teamScore = game.away_team.toLowerCase() === team.toLowerCase() ? game.away_points : game.home_points;
+    var opponentScore = game.away_team.toLowerCase() !== team.toLowerCase() ? game.away_points : game.home_points;
+
+    return teamScore == null ? "TBD" : teamScore + " - " + opponentScore;
+  }
+
+  public getResult(game: Game, team: string) {
+    var teamScore = game.away_team.toLowerCase() === team.toLowerCase() ? game.away_points : game.home_points;
+    var opponentScore = game.away_team.toLowerCase() !== team.toLowerCase() ? game.away_points : game.home_points;
+    var result = teamScore > opponentScore ? "W" : "L";
+    if (teamScore === null) {
+      result = "TBD";
+    }
+
+    return result;
+  }
 }

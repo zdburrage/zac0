@@ -6,8 +6,19 @@
        <legend>Connection Strategy</legend>
        <select formControlName="strategy">
         <option value="waad">Azure AD</option>
+        <!-- <option value="ad">AD/LDAP</option>
+        <option value="adfs">ADFS</option>
+        <option value="okta">Okta</option> -->
       </select>
       </div>
+
+      <div class="input">
+        <legend>Apps to enable</legend>
+        <select formControlName="enabled_clients" multiple>
+          <option *ngFor="let x of clients" value="{{x.client_id}}">{{x.name}}</option>
+        </select>
+      </div>
+
       <div class="input">
         <legend>Connection Name</legend>
         <input type="text" formControlName="name">
@@ -16,10 +27,10 @@
         <legend>Display Name</legend>
         <input type="text" formControlName="display_name">
       </div>
-      <div class="input">
+      <!-- <div class="input">
         <legend>Domain Connection?</legend>
         <input type="checkbox" formControlName="is_domain_connection">
-      </div>
+      </div> -->
       <div class="input">
         <legend>Show as Button?</legend>
         <input type="checkbox" formControlName="show_as_button" />
@@ -37,31 +48,31 @@
             <legend>Client Secret</legend>
             <input type="text" formControlName="client_secret">
           </div>
-          <div class="input">
+          <!-- <div class="input">
             <legend>Use WS Fed?</legend>
             <input type="checkbox" formControlName="use_wsfed">
-          </div>
-          <div class="input">
+          </div> -->
+          <!-- <div class="input">
             <legend>Extend Groups?</legend>
             <input type="checkbox" formControlName="ext_groups">
           </div>
           <div class="input">
             <legend>Extend Profile?</legend>
             <input type="checkbox" formControlName="ext_profile">
-          </div>
-          <div class="input">
+          </div> -->
+          <!-- <div class="input">
             <legend>Identity API</legend>
             <select  formControlName="identity_api">
                 <option value="microsoft-identity-platform-v2.0">
                     Microsoft Identity v2
                 </option>
             </select>
-          </div>
-          <div class="input">
+          </div> -->
+          <!-- <div class="input">
             <legend>Basic Profile</legend>
             <input type="checkbox" formControlName="basic_profile">
-          </div>
-          <div class="input">
+          </div> -->
+          <!-- <div class="input">
             <legend>Tenant Domain</legend>
             <input type="text" formControlName="tenant_domain">
           </div>
@@ -72,16 +83,16 @@
           <div class="input">
             <legend>Domain Aliases</legend>
             <input type="text" formControlName="domain_aliases">
-          </div>
+          </div> -->
       </div>
-      <div class="input">
+      <!-- <div class="input">
         <legend>Enable Users API?</legend>
         <input type="checkbox" formControlName="api_enable_users">
       </div>
       <div class="input">
         <legend>Extend Nested Groups?</legend>
         <input type="checkbox" formControlName="ext_nested_groups">
-      </div>
+      </div> -->
 
       <div class="input">
        <button mat-raised-button color="primary" type="submit">Submit</button>

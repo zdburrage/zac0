@@ -19,10 +19,16 @@ export const environment = {
     ...(audience && audience !== 'YOUR_API_IDENTIFIER' ? { audience } : null),
     redirectUri: window.location.origin,
     errorPath,
+    scope: 'create:campaigns'
   },
   httpInterceptor: {
-    allowedList: [`${apiUri}/api/organization/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`, `${apiUri}/api/connections/*`],
-  },
+    
+      allowedList: [
+        `${apiUri}/api/organization/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`, `${apiUri}/api/connections/*`, `${apiUri}/api/clients`
+      ],
+      
+    
+  }
 };
 
 /*

@@ -40,7 +40,8 @@ const routes: Routes = [
   },
   {
     path: 'create-connection',
-    component: CreateEnterpriseConnectionComponent
+    component: CreateEnterpriseConnectionComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '',

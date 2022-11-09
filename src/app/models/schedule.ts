@@ -25,6 +25,8 @@ export class Game {
         } else if (game.home_conference !== 'SEC' && game.away_conference === 'SEC') {
             this.sec_away = true;
         }
+        this.away_points = game.away_points;
+        this.home_points = game.home_points;
     }
     venue: string;
     week: number;
@@ -34,6 +36,8 @@ export class Game {
     in_conference?: boolean;
     sec_home?: boolean;
     sec_away?: boolean;
+    home_points: number;
+    away_points: number;
 
 }
 

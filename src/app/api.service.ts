@@ -40,6 +40,13 @@ export class ApiService {
   }
 
   postCreateConnection(data: any): Observable<any>{
-    return this.http.post(`${config.apiUri}/api/connections/create`, data);
+    var obj = {
+      data: data
+    }
+    return this.http.post(`${config.apiUri}/api/connections/create`, obj);
+  }
+
+  getClients(): Observable<any> {
+    return this.http.get(`${config.apiUri}/api/clients`);
   }
 }
