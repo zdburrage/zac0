@@ -56,4 +56,8 @@ export class ApiService {
   deleteConnection(id: number): Observable<any> {
     return this.http.delete(`${config.apiUri}/api/connections/${id}`);
   }
+
+  getOrgMembers(orgId: string) : Observable<any> {
+    return this.http.get(`${config.apiUri}/api/organization/${orgId}/members`);
+  }
 }

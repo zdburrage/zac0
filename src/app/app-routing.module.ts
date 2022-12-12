@@ -6,10 +6,12 @@ import { ProfileFormComponent } from './pages/profile-form/profile-form.componen
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { AuthGuard } from '@auth0/auth0-angular';
+import { AdminGuard } from '../../guards/auth.guard'
 import { LoginComponent } from './pages/login/login.component';
 import { EmbeddedLoginComponent } from './pages/embedded-login/embedded-login.component';
 import { CreateEnterpriseConnectionComponent } from './pages/create-enterprise-connection/create-enterprise-connection.component';
 import { ConnectionsPageComponent } from './pages/connections-page/connections-page.component';
+import { OrganizationComponent } from './pages/organization/organization.component';
 
 const routes: Routes = [
   {
@@ -42,12 +44,17 @@ const routes: Routes = [
   {
     path: 'create-connection',
     component: CreateEnterpriseConnectionComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
   },
   {
     path: 'connections',
     component: ConnectionsPageComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
+  },
+  {
+    path: 'organization',
+    component: OrganizationComponent,
+    canActivate: [AuthGuard, AdminGuard],
   },
   {
     path: '',

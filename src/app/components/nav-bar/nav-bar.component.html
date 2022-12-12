@@ -22,14 +22,25 @@
       >
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a routerLink="/" class="nav-link">Home</a>
+            <a routerLink="/" class="nav-link btn">Home</a>
           </li>
-          <li class="nav-item" *ngIf="auth.isAuthenticated$ | async">
-            <a routerLink="schedule" class="nav-link">2022 Football Schedule</a>
+          <li class="nav-item">
+          <div ngbDropdown class="nav-link">
+            <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>Schedules</button>
+            <div ngbDropdownMenu class="dropdown-menu-nav dropdown-menu-left">
+              <button (click)="goToLink('schedule')" ngbDropdownItem>View 2022 Football Schedule</button>
+            </div>
+          </div>
           </li>
-          <li class="nav-item" *ngIf="auth.isAuthenticated$ | async">
-            <a routerLink="connections" class="nav-link">Connections</a>
-          </li>
+          <li class="nav-item">
+            <div ngbDropdown class="nav-link">
+              <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>Admin</button>
+              <div ngbDropdownMenu class="dropdown-menu-nav dropdown-menu-left">
+                <button (click)="goToLink('connections')" ngbDropdownItem>Add or Remove Enterprise Connections</button>
+                <button (click)="goToLink('organization')" ngbDropdownItem>View Organization Members</button>
+              </div>
+            </div>
+            </li>
         </ul>
 
         <ul class="navbar-nav d-none d-md-block">
@@ -55,7 +66,7 @@
               </div>
             </div>
             <div ngbDropdown class="d-inline-block">
-              <button (click)="goToEmbeddedLogin()" type="button" class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Log In (Embedded)</button>
+              <button (click)="goToLink('embedded-login')" type="button" class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Log In (Embedded)</button>
             </div>
           </li>
           <!-- / Login button -->

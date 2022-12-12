@@ -49,8 +49,9 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  goToEmbeddedLogin() {
-    this.router.navigate(['/embedded-login']);
+
+  goToLink(route: string) {
+    this.router.navigate([`${route}`]);
   }
 
   logout() {

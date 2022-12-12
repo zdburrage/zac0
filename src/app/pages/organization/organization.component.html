@@ -1,0 +1,36 @@
+<h1>{{org?.display_name}}</h1>
+<img src={{org?.branding?.logo_url}}>
+
+
+<h1>Organization Members</h1>
+
+<table  mat-table [dataSource]="members" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}}
+        </td>
+    </ng-container>
+
+              <!-- Name Column -->
+    <ng-container matColumnDef="user_id">
+        <th mat-header-cell *matHeaderCellDef> User ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.user_id}}
+        </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="['name', 'email', 'user_id']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'email', 'user_id'];"></tr>
+  </table>

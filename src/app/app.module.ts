@@ -30,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { CreateEnterpriseConnectionComponent } from './pages/create-enterprise-connection/create-enterprise-connection.component';
 import { ConnectionsPageComponent } from './pages/connections-page/connections-page.component';
+import { OrganizationComponent } from './pages/organization/organization.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ConnectionsPageComponent } from './pages/connections-page/connections-p
     LoginComponent,
     EmbeddedLoginComponent,
     CreateEnterpriseConnectionComponent,
-    ConnectionsPageComponent
+    ConnectionsPageComponent,
+    OrganizationComponent
   ],
   imports: [
     BrowserModule,

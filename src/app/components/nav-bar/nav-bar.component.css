@@ -20,6 +20,16 @@
     overflow-x: clip;
 }
 
+.dropdown-menu-nav {
+    width: auto;
+    height: auto;
+    overflow-y: unset;
+}
+
 #dropdownBasic2::after {
     display: none;
+}
+
+.btn {
+    padding: 5%;
 }
