@@ -17,28 +17,7 @@ export class LoginComponent {
   });
 
   constructor(public auth: AuthService, public route: ActivatedRoute) {
-    this.route.queryParams.subscribe(res => {
-      if (res.invitation) {
-        this.auth.loginWithRedirect({
-          invitation: res.invitation,
-          organization: res.organization,
-          redirect_uri: 'http://localhost:3000'
-        })
-      }  
-    })
-
-    this.route.fragment.subscribe(res => {
-      this.webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
-        if (err) {
-          return console.log(err);
-        }
-      
-        this.webAuth.client.userInfo(authResult.accessToken, function(err, user) {
-          console.log(user);
-          window.location.href = 'http://localhost:4200';
-        });
-      });
-    })
+    this.auth.loginWithRedirect({connection: 'Oktaverse'});
 
   }
 }
