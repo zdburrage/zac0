@@ -49,8 +49,8 @@ export class ApiService {
   getClients(): Observable<any> {
     return this.http.get(`${config.apiUri}/api/clients`);
   }
-  getConnections(): Observable<any> {
-    return this.http.get(`${config.apiUri}/api/connections`);
+  getConnections(orgId: number): Observable<any> {
+    return this.http.get(`${config.apiUri}/api/organization/${orgId}/connections`);
   }
 
   deleteConnection(id: number): Observable<any> {

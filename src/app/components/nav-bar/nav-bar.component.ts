@@ -30,7 +30,7 @@ export class NavBarComponent implements OnInit {
   }
 
   loginWithRedirect() {
-    this.auth.loginWithRedirect()
+    this.auth.loginWithRedirect();
   }
 
   loginWithOrg(orgId: string) {
@@ -43,9 +43,9 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  loginWithAD() {
+  loginWithPasswordless() {
     this.auth.loginWithRedirect({
-      connection: 'auth0-test-ad'
+      connection: 'email'
     });
   }
 
