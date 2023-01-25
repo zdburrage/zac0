@@ -49,7 +49,7 @@ export class ApiService {
   getClients(): Observable<any> {
     return this.http.get(`${config.apiUri}/api/clients`);
   }
-  getConnections(orgId: number): Observable<any> {
+  getConnections(orgId: string): Observable<any> {
     return this.http.get(`${config.apiUri}/api/organization/${orgId}/connections`);
   }
 

@@ -13,6 +13,7 @@ import { ApiService } from 'src/app/api.service';
 export class ConnectionsPageComponent implements OnInit {
 
   connections: [];
+  orgId: string;
 
 
   constructor(public auth: AuthService,
@@ -20,12 +21,16 @@ export class ConnectionsPageComponent implements OnInit {
               private formBuilder: FormBuilder,
                private apiService: ApiService,
                private router: Router) {
+
+      this.auth.user$.subscribe(res => {
+        this.orgId = res.org_id;
+      })
     
   }
 
   ngOnInit() {
 
-    this.apiService.getConnections().subscribe(res => {
+    this.apiService.getConnections(this.orgId).subscribe(res => {
       this.connections = res;
     })
   }
@@ -33,7 +38,7 @@ export class ConnectionsPageComponent implements OnInit {
   deleteConnection(id: number) {
     this.apiService.deleteConnection(id).pipe(
         switchMap(res => {
-            return this.apiService.getConnections();
+            return this.apiService.getConnections(this.orgId);
         })
     ).subscribe(res => {
         this.connections = res;
