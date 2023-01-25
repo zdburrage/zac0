@@ -10,20 +10,20 @@
         <!-- Name Column -->
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.connection.name}}
+          <td mat-cell *matCellDef="let element"> {{element.connection.name || element.name}}
           </td>
         </ng-container>
       
         <!-- Strategy Column -->
         <ng-container matColumnDef="strategy">
           <th mat-header-cell *matHeaderCellDef> Strategy </th>
-          <td mat-cell *matCellDef="let element"> {{element.connection.strategy}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.connection.strategy || element.strategy}} </td>
         </ng-container>
 
         <!-- Delete Column -->
         <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element"> <a (click)="deleteConnection(element.connection_id)">Delete</a></td>
+        <td mat-cell *matCellDef="let element"> <a (click)="deleteConnection(element.connection_id || element.id)">Delete</a></td>
         </ng-container>
   
       
