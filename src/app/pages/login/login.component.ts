@@ -17,7 +17,7 @@ export class LoginComponent {
   });
 
   constructor(public auth: AuthService, public route: ActivatedRoute) {
-    this.auth.loginWithRedirect({connection: 'Oktaverse'});
+    this.auth.loginWithRedirect({connection: 'Azure-SAML'});
 
   }
 }
