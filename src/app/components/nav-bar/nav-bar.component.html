@@ -54,8 +54,7 @@
               <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Log In</button>
               <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
                 <button (click)="loginWithRedirect()" ngbDropdownItem>Log in Globally</button>
-                <!-- <button (click)="loginWithBigCommerce()" ngbDropdownItem>Log in to BigCommerce Store</button>
-                <button (click)="loginWithPasswordless()" ngbDropdownItem>Log in with Passwordless</button> -->
+                <button (click)="loginWithPasswordless()" ngbDropdownItem>Log in with Passwordless</button>
                 
                 <div (click)="loginWithOrg(org.id)" class="dropdown-item org-list" *ngFor="let org of orgs">
                   <div>
