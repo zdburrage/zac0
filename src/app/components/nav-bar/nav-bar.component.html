@@ -41,6 +41,9 @@
               </div>
             </div>
             </li>
+            <li class="nav-item">
+              <a routerLink="/api-key" class="nav-link btn">API Key</a>
+            </li>
         </ul>
 
         <ul class="navbar-nav d-none d-md-block">
@@ -54,7 +57,8 @@
               <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Log In</button>
               <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
                 <button (click)="loginWithRedirect()" ngbDropdownItem>Log in Globally</button>
-                <button (click)="loginWithPasswordless()" ngbDropdownItem>Log in with Passwordless</button>
+                <button (click)="loginWithPasswordless('email')" ngbDropdownItem>Log in with Passwordless (Email)</button>
+                <button (click)="loginWithPasswordless('sms')" ngbDropdownItem>Log in with Passwordless (SMS)</button>
                 
                 <div (click)="loginWithOrg(org.id)" class="dropdown-item org-list" *ngFor="let org of orgs">
                   <div>

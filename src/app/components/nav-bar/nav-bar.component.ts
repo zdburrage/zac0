@@ -43,9 +43,9 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  loginWithPasswordless() {
+  loginWithPasswordless(type: string) {
     this.auth.loginWithRedirect({
-      connection: 'email'
+      connection: type
     });
   }
 

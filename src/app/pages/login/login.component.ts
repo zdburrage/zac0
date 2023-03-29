@@ -17,7 +17,16 @@ export class LoginComponent {
   });
 
   constructor(public auth: AuthService, public route: ActivatedRoute) {
-    this.auth.loginWithRedirect({connection: 'Azure-SAML'});
+
+    this.route.queryParams.subscribe(params => {
+      let org  = params['org_id'];
+      if (org) {
+        this.auth.loginWithRedirect({organization: org});
+      } else {
+        this.auth.loginWithRedirect();
+      }
+
+  });
 
   }
 }
