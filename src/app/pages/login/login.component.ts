@@ -19,9 +19,10 @@ export class LoginComponent {
   constructor(public auth: AuthService, public route: ActivatedRoute) {
 
     this.route.queryParams.subscribe(params => {
-      let org  = params['org_id'];
+      let org  = params['organization'];
+      let invitation = params['invitation'];
       if (org) {
-        this.auth.loginWithRedirect({organization: org});
+        this.auth.loginWithRedirect({organization: org, invitation: invitation});
       } else {
         this.auth.loginWithRedirect();
       }
