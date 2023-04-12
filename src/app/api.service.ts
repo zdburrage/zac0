@@ -65,4 +65,8 @@ export class ApiService {
   getOrgMembers(orgId: string) : Observable<any> {
     return this.http.get(`${config.apiUri}/api/organization/${orgId}/members`);
   }
+
+  postCreateM2m(userId: string) : Observable<any>{
+    return this.http.post(`${config.apiUri}/api/m2m/${userId}`, {});
+  }
 }

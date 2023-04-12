@@ -12,6 +12,7 @@ import { EmbeddedLoginComponent } from './pages/embedded-login/embedded-login.co
 import { CreateEnterpriseConnectionComponent } from './pages/create-enterprise-connection/create-enterprise-connection.component';
 import { ConnectionsPageComponent } from './pages/connections-page/connections-page.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
+import { ApiKeyPageComponent } from './pages/api-key-page/api-key-page.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,11 @@ const routes: Routes = [
     path: 'organization',
     component: OrganizationComponent,
     canActivate: [AuthGuard, AdminGuard],
+  },
+  {
+    path: 'api-key',
+    component: ApiKeyPageComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '',

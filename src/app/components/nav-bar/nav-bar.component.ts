@@ -45,6 +45,7 @@ export class NavBarComponent implements OnInit {
 
   loginWithPasswordless(type: string) {
     this.auth.loginWithRedirect({
+      organization: 'org_0sum6KkjuJTaDjSZ',
       connection: type
     });
   }

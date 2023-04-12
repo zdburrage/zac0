@@ -31,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CreateEnterpriseConnectionComponent } from './pages/create-enterprise-connection/create-enterprise-connection.component';
 import { ConnectionsPageComponent } from './pages/connections-page/connections-page.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
+import { ApiKeyPageComponent } from './pages/api-key-page/api-key-page.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { OrganizationComponent } from './pages/organization/organization.compone
     EmbeddedLoginComponent,
     CreateEnterpriseConnectionComponent,
     ConnectionsPageComponent,
-    OrganizationComponent
+    OrganizationComponent,
+    ApiKeyPageComponent
   ],
   imports: [
     BrowserModule,
