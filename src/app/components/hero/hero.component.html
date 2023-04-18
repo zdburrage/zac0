@@ -4,9 +4,13 @@
       <img img class="app-logos" src="{{org?.branding.logo_url}}" alt="SEC logo" />
       <h1 class="mb-4">{{org?.display_name}}</h1>
     </div>
-    <div *ngIf="!org">
+    <div *ngIf="!org && !isb12()">
       <img img class="app-logos" src="../../assets/logo.png" alt="SEC logo" />
       <h1 class="mb-4">The Southeastern Conference</h1>
+    </div>
+    <div *ngIf="!org && isb12()">
+      <img img class="app-logos" src="../../assets/b12.png" alt="Big 12 logo" />
+      <h1 class="mb-4">The Big 12</h1>
     </div>
       <p class="lead">
         {{org?.metadata?.slogan || 'It Just Means More'}}

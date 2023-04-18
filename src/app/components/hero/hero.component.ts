@@ -35,4 +35,8 @@ export class HeroComponent implements OnInit {
     })
   }
 
+  isb12() {
+    return window.location.href === 'https://www.company-a.zacsandbox.com'
+  }
+
 }
