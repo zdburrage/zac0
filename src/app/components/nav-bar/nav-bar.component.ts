@@ -24,9 +24,11 @@ export class NavBarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.apiService.getOrganizations().subscribe(res => {
-      this.orgs = res;
-    })
+    if (!window.location.href.includes('company-a')) {
+      this.apiService.getOrganizations().subscribe(res => {
+        this.orgs = res;
+      })
+    }
   }
 
   loginWithRedirect() {
