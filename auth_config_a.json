@@ -1,0 +1,9 @@
+{
+  "domain": "test-lab-zac.us.auth0.com",
+  "apiClientId": "643f0453bb82f10be2d25ccd", 
+  "clientId": "XBpUc9qvRQJ8xJR8YYbxgF1zlGoD5IU8",
+  "audience": "https://b12-api",
+  "apiUri": "https://zac0-api.vercel.app",
+  "appUri": "https://company-a.zacsandbox.com",
+  "errorPath": "/error"
+}
