@@ -45,6 +45,12 @@ export class NavBarComponent implements OnInit {
     });
   }
 
+  loginWithKick() {
+    this.auth.loginWithRedirect({
+      connection: 'Kick'
+    });
+  }
+
   loginWithPasswordless(type: string) {
     this.auth.loginWithRedirect({
       organization: 'org_0sum6KkjuJTaDjSZ',

@@ -57,8 +57,14 @@
               <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Log In</button>
               <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
                 <button (click)="loginWithRedirect()" ngbDropdownItem>Log in Globally</button>
-                <button (click)="loginWithPasswordless('email')" ngbDropdownItem>Log in with Passwordless (Email)</button>
-                <button (click)="loginWithPasswordless('sms')" ngbDropdownItem>Log in with Passwordless (SMS)</button>
+                <div (click)="loginWithKick()" class="dropdown-item org-list">
+                  <div>
+                    <img class="list-img" src="https://i.kym-cdn.com/entries/icons/original/000/042/927/kickcover.jpg">
+                  </div>
+                  <button ngbDropdownItem>Log in With Kick.com</button>
+                </div>
+                <!-- <button (click)="loginWithPasswordless('email')" ngbDropdownItem>Log in with Passwordless (Email)</button>
+                <button (click)="loginWithPasswordless('sms')" ngbDropdownItem>Log in with Passwordless (SMS)</button> -->
                 
                 <div (click)="loginWithOrg(org.id)" class="dropdown-item org-list" *ngFor="let org of orgs">
                   <div>
