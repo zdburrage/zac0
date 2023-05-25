@@ -50,6 +50,11 @@ export class NavBarComponent implements OnInit {
       connection: 'Kick'
     });
   }
+  loginWithInitech() {
+    this.auth.loginWithRedirect({
+      connection: 'Initech'
+    });
+  }
 
   loginWithPasswordless(type: string) {
     this.auth.loginWithRedirect({
