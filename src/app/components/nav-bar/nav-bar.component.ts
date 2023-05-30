@@ -41,7 +41,7 @@ export class NavBarComponent implements OnInit {
 
   loginWithBigCommerce() {
     this.auth.loginWithRedirect({
-      connection: 'BigCommerce'
+      connection: 'BigCommerce',
     });
   }
 

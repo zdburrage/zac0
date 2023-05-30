@@ -17,6 +17,7 @@ export class ApiKeyPageComponent implements OnInit {
   user: User = undefined;
   clientId: string = null;
   clientSecret: string = null;
+  acr: string = null;
 
 
   constructor(public auth: AuthService,
@@ -29,6 +30,10 @@ export class ApiKeyPageComponent implements OnInit {
         this.orgId = res.org_id;
         this.user = res;
       })
+
+      this.auth.idTokenClaims$.subscribe(res => {
+        this.acr = res.acr;
+      })
     
   }
 
@@ -40,10 +45,17 @@ export class ApiKeyPageComponent implements OnInit {
   }
 
   createm2m() {
-    this.apiService.postCreateM2m(this.user.sub).subscribe(res => {
-      this.clientId = res.client_id;
-      this.clientSecret = res.client_secret;
-    })
+    if (!this.acr) {
+      this.auth.loginWithRedirect({
+        redirect_uri: 'https://zacsandbox.com/api-key',
+        acr_values: 'http://schemas.openid.net/pape/policies/2007/06/multi-factor'
+      })
+    } else {
+      this.apiService.postCreateM2m(this.user.sub).subscribe(res => {
+        this.clientId = res.client_id;
+        this.clientSecret = res.client_secret;
+      })
+    }
   }
 
   deleteConnection(id: number) {
