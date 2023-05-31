@@ -45,17 +45,17 @@ export class ApiKeyPageComponent implements OnInit {
   }
 
   createm2m() {
-    if (!this.acr) {
-      this.auth.loginWithRedirect({
-        redirect_uri: 'https://zacsandbox.com/api-key',
-        acr_values: 'http://schemas.openid.net/pape/policies/2007/06/multi-factor'
-      })
-    } else {
+    // if (!this.acr) {
+    //   this.auth.loginWithRedirect({
+    //     redirect_uri: 'https://zacsandbox.com/api-key',
+    //     acr_values: 'http://schemas.openid.net/pape/policies/2007/06/multi-factor'
+    //   })
+    // } else {
       this.apiService.postCreateM2m(this.user.sub).subscribe(res => {
         this.clientId = res.client_id;
         this.clientSecret = res.client_secret;
       })
-    }
+    //}
   }
 
   deleteConnection(id: number) {
