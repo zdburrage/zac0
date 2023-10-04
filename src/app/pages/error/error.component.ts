@@ -18,6 +18,12 @@ export class ErrorComponent {
     timer(0).pipe(takeUntil(this.error$)).subscribe(() => {
       this.router.navigateByUrl('/');
     });
+
+    this.auth.error$.subscribe(res => {
+      if (res.message === 'access_denied') {
+        window.location.href = `https://login.zacsandbox.com/v2/logout?returnTo=https%3A%2F%2Fwww.zacsandbox.com&client_id=SRxPnDsqhkiccvGny0rzX3RECajkDK6F&auth0Client=eyJuYW1lIjoiQGF1dGgwL2F1dGgwLWFuZ3VsYXIiLCJ2ZXJzaW9uIjoiMS4xMC4wIiwiZW52Ijp7ImFuZ3VsYXIvY29yZSI6IjEzLjMuMTEifX0%3D`
+      }
+    })
   }
 }
 

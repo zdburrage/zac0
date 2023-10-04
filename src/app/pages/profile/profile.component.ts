@@ -13,7 +13,10 @@ export class ProfileComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.auth.getUser().subscribe(
-      (profile) => (this.profileJson = JSON.stringify(profile, null, 2))
+      (profile) => {
+        this.profileJson = JSON.stringify(profile, null, 2)
+        console.log(profile['https://zac0.herokuapp.com/companyname']);
+      }
     );
   }
 }

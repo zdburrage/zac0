@@ -71,4 +71,8 @@ export class NavBarComponent implements OnInit {
   logout() {
     this.auth.logout({ returnTo: this.doc.location.origin });
   }
+
+  // public getYear() {
+  //   return new Date().getFullYear();
+  // }
 }

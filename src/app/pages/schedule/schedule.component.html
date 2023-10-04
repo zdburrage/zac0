@@ -14,7 +14,7 @@
   <div class="result-block-container" *ngFor="let schedule of schedules">
 
     <div class="title">
-      <h1>2022 Schedule - {{schedule?.team | titlecase}}</h1>
+      <h1>{{getYear()}} - {{schedule?.team | titlecase}}</h1>
     
       <div *ngIf="hasApiError" class="alert alert-danger" role="alert">
         An error occured when trying to call the local API on port 3001. Ensure the local API is started using either `npm run dev` or `npm run

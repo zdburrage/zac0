@@ -75,6 +75,10 @@ export class ScheduleComponent implements OnInit {
     })
   }
 
+  public getYear() {
+    return new Date().getFullYear();
+  }
+
   public getTeam(game: Game, team: string) {
     return game.away_team.toLowerCase() === team.toLowerCase() ? game.away_team : game.home_team;
   }

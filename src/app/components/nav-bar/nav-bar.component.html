@@ -28,7 +28,7 @@
           <div ngbDropdown class="nav-link">
             <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>Schedules</button>
             <div ngbDropdownMenu class="dropdown-menu-nav dropdown-menu-left">
-              <button (click)="goToLink('schedule')" ngbDropdownItem>View 2022 Football Schedule</button>
+              <button (click)="goToLink('schedule')" ngbDropdownItem>View 2023 Football Schedule</button>
             </div>
           </div>
           </li>
@@ -56,19 +56,14 @@
             <div ngbDropdown class="d-inline-block">
               <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Log In</button>
               <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
-                <button (click)="loginWithRedirect()" ngbDropdownItem>Log in Globally</button>
-                <div (click)="loginWithKick()" class="dropdown-item org-list">
+                <div (click)="loginWithRedirect()" class="dropdown-item org-list">
                   <div>
-                    <img class="list-img" src="https://i.kym-cdn.com/entries/icons/original/000/042/927/kickcover.jpg">
+                    <img class="list-img" src="../../../assets/logo.png">
                   </div>
-                  <button ngbDropdownItem>Log in With Kick.com</button>
-                </div>
-                <div (click)="loginWithInitech()" class="dropdown-item org-list">
-                  <div>
-                    <img class="list-img" src="https://pbs.twimg.com/media/C-scvFmUAAApybh.jpg">
-                  </div>
-                  <button ngbDropdownItem>Log in With Initech</button>
-                </div>
+                  <button ngbDropdownItem>
+                    Log in Globally
+                  </button>
+              </div>
                 <!-- <button (click)="loginWithPasswordless('email')" ngbDropdownItem>Log in with Passwordless (Email)</button>
                 <button (click)="loginWithPasswordless('sms')" ngbDropdownItem>Log in with Passwordless (SMS)</button> -->
                 
