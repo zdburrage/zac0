@@ -15,7 +15,6 @@ import jwt_decode from 'jwt-decode';
   styleUrls: ['./profile-form.component.css'],
 })
 export class ProfileFormComponent {
-  audience = this.configFactory.get()?.audience;
   public user: User = undefined;
 
   public secForm = this.formBuilder.group({

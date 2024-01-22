@@ -15,7 +15,7 @@ export class OrganizationComponent implements OnInit {
   constructor(private apiService: ApiService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.auth.getIdTokenClaims().pipe(
+    this.auth.idTokenClaims$.pipe(
       switchMap(idToken => {
           return this.apiService.getOrganizationById(idToken?.org_id);
       }),

@@ -13,7 +13,6 @@ import {Game, Schedule} from '../../models/schedule';
 export class ScheduleComponent implements OnInit {
   games: Game[];
   schedules: Schedule[] = [];
-  audience = this.configFactory.get()?.audience;
   hasApiError = false;
   org = undefined;
 
@@ -25,7 +24,7 @@ export class ScheduleComponent implements OnInit {
 
   ngOnInit() {
 
-    this.authService.getIdTokenClaims().pipe(
+    this.authService.idTokenClaims$.pipe(
       switchMap(idToken => {
         if (idToken?.org_id) {
           return this.api.getOrganizationById(idToken?.org_id);

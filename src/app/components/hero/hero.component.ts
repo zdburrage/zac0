@@ -15,7 +15,7 @@ export class HeroComponent implements OnInit {
   constructor(private apiService: ApiService, public auth: AuthService) { }
 
   ngOnInit() {
-    this.auth.getIdTokenClaims().pipe(
+    this.auth.idTokenClaims$.pipe(
       switchMap(idToken => {
           return this.apiService.getOrganizationById(idToken?.org_id);
       }),

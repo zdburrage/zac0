@@ -22,7 +22,7 @@ export class LoginComponent {
       let org  = params['organization'];
       let invitation = params['invitation'];
       if (org) {
-        this.auth.loginWithRedirect({organization: org, invitation: invitation});
+        this.auth.loginWithRedirect({authorizationParams: {organization: org, invitation: invitation}});
       } else {
         this.auth.loginWithRedirect();
       }

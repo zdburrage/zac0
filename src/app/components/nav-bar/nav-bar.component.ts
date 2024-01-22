@@ -32,35 +32,19 @@ export class NavBarComponent implements OnInit {
   }
 
   loginWithRedirect() {
-    this.auth.loginWithRedirect();
+    this.auth.loginWithRedirect({
+      authorizationParams: {
+        redirect_uri: this.doc.location.origin
+      }
+    });
   }
 
   loginWithOrg(orgId: string) {
-    this.auth.loginWithRedirect({organization: orgId});
-  }
-
-  loginWithBigCommerce() {
     this.auth.loginWithRedirect({
-      connection: 'BigCommerce',
-    });
-  }
-
-  loginWithKick() {
-    this.auth.loginWithRedirect({
-      connection: 'Kick'
-    });
-  }
-  loginWithInitech() {
-    this.auth.loginWithRedirect({
-      connection: 'Initech'
-    });
-  }
-
-  loginWithPasswordless(type: string) {
-    this.auth.loginWithRedirect({
-      organization: 'org_0sum6KkjuJTaDjSZ',
-      connection: type
-    });
+      authorizationParams: {
+        organization: orgId
+      }
+    })
   }
 
 
@@ -69,7 +53,9 @@ export class NavBarComponent implements OnInit {
   }
 
   logout() {
-    this.auth.logout({ returnTo: this.doc.location.origin });
+    this.auth.logout({ logoutParams:{
+      returnTo: this.doc.location.origin
+    } });
   }
 
   // public getYear() {
