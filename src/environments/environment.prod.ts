@@ -18,11 +18,11 @@ export const environment = {
         redirectUri: window.location.origin,
         errorPath,
         scope: 'openid profile email'
-    },
+    }
+  },
     httpInterceptor: {
       allowedList: [
         `${apiUri}/api/organization/*`,`${apiUri}/api/organizations/*`, `${apiUri}/api/external`, `${apiUri}/api/users/*`, `${apiUri}/api/connections*`, `${apiUri}/api/clients`
       ],
     },
   }
-}
