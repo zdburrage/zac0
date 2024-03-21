@@ -17,7 +17,7 @@ import { HomeContentComponent } from './components/home-content/home-content.com
 import { LoadingComponent } from './components/loading/loading.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
+import { AuthHttpInterceptor, AuthModule, provideAuth0 } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
@@ -61,13 +61,13 @@ import { ApiKeyPageComponent } from './pages/api-key-page/api-key-page.component
     NgbModule,
     HighlightModule,
     FontAwesomeModule,
-    AuthModule.forRoot({
-      ...env.auth,
-      httpInterceptor: {
-        ...env.httpInterceptor,
-      },
+    // AuthModule.forRoot({
+    //   ...env.auth,
+    //   httpInterceptor: {
+    //     ...env.httpInterceptor,
+    //   },
       
-    }),
+    // }),
     MatTableModule,
     MatButtonModule,
     MatIconModule,
@@ -77,11 +77,12 @@ import { ApiKeyPageComponent } from './pages/api-key-page/api-key-page.component
     MatInputModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthHttpInterceptor,
-      multi: true,
-    },
+    provideAuth0({
+      domain: env.auth.domain,
+      clientId: env.auth.clientId,
+      authorizationParams: env.auth.authorizationParams,
+      httpInterceptor: env.httpInterceptor
+    }),
     {
       provide: Window,
       useValue: window,
