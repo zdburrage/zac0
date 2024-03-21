@@ -34,7 +34,7 @@ export class NavBarComponent implements OnInit {
   loginWithRedirect() {
     this.auth.loginWithRedirect({
       authorizationParams: {
-        redirect_uri: this.doc.location.origin
+        redirect_uri: window.location.origin
       }
     });
   }
@@ -43,7 +43,7 @@ export class NavBarComponent implements OnInit {
     this.auth.loginWithRedirect({
       authorizationParams: {
         organization: orgId,
-        redirect_uri: this.doc.location.origin
+        redirect_uri: window.location.origin
       }
     })
   }
@@ -55,7 +55,7 @@ export class NavBarComponent implements OnInit {
 
   logout() {
     this.auth.logout({ logoutParams:{
-      returnTo: this.doc.location.origin
+      returnTo: window.location.origin
     } });
   }
 
