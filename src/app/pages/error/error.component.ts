@@ -15,9 +15,7 @@ export class ErrorComponent {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    timer(0).pipe(takeUntil(this.error$)).subscribe(() => {
-      this.router.navigateByUrl('/');
-    });
+
 
     this.auth.error$.subscribe(res => {
       if (res.message === 'user does not exist anymore') {

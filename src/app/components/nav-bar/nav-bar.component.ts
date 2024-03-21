@@ -42,7 +42,8 @@ export class NavBarComponent implements OnInit {
   loginWithOrg(orgId: string) {
     this.auth.loginWithRedirect({
       authorizationParams: {
-        organization: orgId
+        organization: orgId,
+        redirect_uri: this.doc.location.origin
       }
     })
   }
