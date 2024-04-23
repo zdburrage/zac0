@@ -10,24 +10,18 @@ import { ApiService } from 'src/app/api.service';
 })
 export class OrganizationComponent implements OnInit {
   org = undefined;
-  members = [];
+  orgs = [];
 
   constructor(private apiService: ApiService, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.auth.idTokenClaims$.pipe(
       switchMap(idToken => {
-          return this.apiService.getOrganizationById(idToken?.org_id);
-      }),
-      catchError(err => {
-        throw(err);
-      }),
-      switchMap(org => {
-          this.org = org;
-          return this.apiService.getOrgMembers(org.id);
+        console.log(idToken)
+          return this.apiService.getOrganizationsUserIsPartOf(idToken?.sub);
       })
-    ).subscribe(members => {
-      this.members = members
+    ).subscribe(orgs => {
+      this.orgs = orgs
     })
   }
 

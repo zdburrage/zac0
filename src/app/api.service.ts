@@ -24,6 +24,10 @@ export class ApiService {
     return this.http.get(`${config.apiUri}/api/organization/${orgId}`);
   }
 
+  getOrganizationsUserIsPartOf(userId: string): Observable<any> {
+    return this.http.get(`${config.apiUri}/api/organization/self/${userId}`);
+  }
+
   getTeamSchedule(year: number): Observable<IGame[]> {
     return this.http.get<IGame[]>(`${config.apiUri}/api/games/${year}`);
   }

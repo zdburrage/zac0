@@ -20,7 +20,7 @@ export const environment = {
       ...(audience && audience !== 'YOUR_API_IDENTIFIER' ? { audience } : null),
       redirectUri: window.location.origin,
       errorPath,
-      scope: 'openid profile email'
+      scope: 'openid profile email test:test'
     }
   },
   httpInterceptor: {

@@ -17,7 +17,7 @@ export class AdminGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       return this.auth.idTokenClaims$.pipe(
         switchMap(res => {
-          if (res['https://zac0.herokuapp.com/roles'] && res['https://zac0.herokuapp.com/roles'].indexOf('SEC Admin') !== -1) {
+          if (res['https://auth0.zac.me/roles'] && res['https://auth0.zac.me/roles'].indexOf('SEC Admin') !== -1) {
             return of(true);
           } else {
             alert("User not permitted to access this page");
