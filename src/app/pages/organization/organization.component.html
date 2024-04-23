@@ -2,7 +2,7 @@
 <img src={{org?.branding?.logo_url}}>
 
 
-<h1>Organization Members</h1>
+<h1>Your Organizations</h1>
 
 <table  mat-table [dataSource]="orgs" class="mat-elevation-z8">
 
@@ -18,14 +18,14 @@
 
     Name Column
     <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <th mat-header-cell *matHeaderCellDef> ID </th>
         <td mat-cell *matCellDef="let element"> {{element.id}}
         </td>
     </ng-container>
 
               <!-- Name Column -->
     <ng-container matColumnDef="user_id">
-        <th mat-header-cell *matHeaderCellDef> User ID </th>
+        <th mat-header-cell *matHeaderCellDef> Slogan </th>
         <td mat-cell *matCellDef="let element"> {{element.metadata.slogan}}
         </td>
     </ng-container>
