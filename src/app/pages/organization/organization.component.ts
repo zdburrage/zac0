@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/api.service';
 export class OrganizationComponent implements OnInit {
   org = undefined;
   orgs = [];
+  guid = undefined;
 
   constructor(private apiService: ApiService, private auth: AuthService) { }
 
@@ -22,6 +23,11 @@ export class OrganizationComponent implements OnInit {
       })
     ).subscribe(orgs => {
       this.orgs = orgs
+    })
+
+    this.auth.idTokenClaims$.subscribe(res => {
+      var claims = res;
+      this.guid = claims["https://auth0.zac.me/guid"];
     })
   }
 
